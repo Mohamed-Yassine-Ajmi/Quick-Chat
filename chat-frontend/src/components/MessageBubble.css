@@ -1,0 +1,86 @@
+.bubble-wrapper {
+  display: flex;
+  margin-bottom: 6px;
+  padding: 0 16px;
+  animation: bubbleIn 0.25s ease-out;
+}
+
+@keyframes bubbleIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.bubble-wrapper.mine {
+  justify-content: flex-end;
+}
+
+.bubble-wrapper.theirs {
+  justify-content: flex-start;
+}
+
+.bubble {
+  max-width: 65%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  word-wrap: break-word;
+  position: relative;
+}
+
+.bubble-mine {
+  background: linear-gradient(135deg, #6366f1, #818cf8);
+  color: #fff;
+  border-bottom-right-radius: 6px;
+}
+
+.bubble-theirs {
+  background: var(--surface-elevated);
+  color: var(--text-primary);
+  border-bottom-left-radius: 6px;
+  border: 1px solid var(--border);
+}
+
+.bubble-content {
+  margin: 0;
+  font-size: 0.925rem;
+  line-height: 1.45;
+}
+
+.bubble-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.bubble-time {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+.bubble-tick {
+  display: flex;
+  align-items: center;
+  opacity: 0.6;
+}
+
+.bubble-tick.read {
+  opacity: 1;
+  color: #67e8f9;
+}
+
+.bubble-theirs .bubble-time {
+  color: var(--text-muted);
+}
+
+@media (max-width: 640px) {
+  .bubble {
+    max-width: 85%;
+  }
+}
